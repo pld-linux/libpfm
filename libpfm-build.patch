@@ -1,0 +1,12 @@
+diff -ur libpfm-4.11.0.orig/perf_examples/rtop.c libpfm-4.11.0/perf_examples/rtop.c
+--- libpfm-4.11.0.orig/perf_examples/rtop.c	2020-09-02 20:48:00.000000000 +0200
++++ libpfm-4.11.0/perf_examples/rtop.c	2022-02-22 12:19:18.132785190 +0100
+@@ -371,7 +371,7 @@
+ 			if (u_cycles > 100.0) u_cycles = 100.0;
+ 
+ 			printw("CPU%-2ld %6.2f%% usr %6.2f%% sys %6.2f%% idle (scaling ratio %.2f%%)\n",
+-				i,
++				(long)i,
+ 				u_cycles,
+ 				k_cycles,
+ 				i_cycles,
