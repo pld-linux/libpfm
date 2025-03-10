@@ -12,7 +12,7 @@ Summary:	Library to encode performance events for use by perf tool
 Summary(pl.UTF-8):	Biblioteka do kodowania zdarzeń związanych z wydajnością do użycia przez narzędzie perf
 Name:		libpfm
 Version:	4.13.0
-Release:	1
+Release:	
 License:	MIT
 Group:		Libraries
 Source0:	https://downloads.sourceforge.net/perfmon2/%{name}-%{version}.tar.gz
