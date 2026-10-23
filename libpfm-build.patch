@@ -10,3 +10,28 @@ diff -ur libpfm-4.11.0.orig/perf_examples/rtop.c libpfm-4.11.0/perf_examples/rto
  				u_cycles,
  				k_cycles,
  				i_cycles,
+diff -ur libpfm-4.14.1.orig/lib/pfmlib_common.c libpfm-4.14.1/lib/pfmlib_common.c
+--- libpfm-4.14.1.orig/lib/pfmlib_common.c	2026-09-21 08:59:43.000000000 +0200
++++ libpfm-4.14.1/lib/pfmlib_common.c	2026-10-23 20:31:29.502218152 +0200
+@@ -1893,8 +1893,7 @@
+ 	/*
+ 	 * support only one event at a time.
+ 	 */
+-	p = strpbrk(event, PFMLIB_EVENT_DELIM);
+-	if (p)
++	if (strpbrk(event, PFMLIB_EVENT_DELIM))
+ 		return PFM_ERR_INVAL;
+ 	/*
+ 	 * create copy because string is const
+diff -ur libpfm-4.14.1.orig/tests/validate_x86.c libpfm-4.14.1/tests/validate_x86.c
+--- libpfm-4.14.1.orig/tests/validate_x86.c	2026-09-21 08:59:43.000000000 +0200
++++ libpfm-4.14.1/tests/validate_x86.c	2026-10-23 20:31:29.502218152 +0200
+@@ -10522,7 +10522,7 @@
+ check_pmu_supported(const char *evt)
+ {
+ 	pfm_pmu_info_t info;
+-	char *p;
++	const char *p;
+ 	int ret;
+ 	pfm_pmu_t i;
+ 
