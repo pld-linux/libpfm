@@ -1,7 +1,7 @@
 #
 # Conditional build:
 %bcond_without	python	# Python modules (any)
-%bcond_without	python2	# CPython 2.x module
+%bcond_with	python2	# CPython 2.x module
 %bcond_without	python3	# CPython 3.x module
 #
 %if %{without python}
@@ -12,7 +12,7 @@ Summary:	Library to encode performance events for use by perf tool
 Summary(pl.UTF-8):	Biblioteka do kodowania zdarzeń związanych z wydajnością do użycia przez narzędzie perf
 Name:		libpfm
 Version:	4.14.1
-Release:	2
+Release:	3
 License:	MIT
 Group:		Libraries
 Source0:	https://downloads.sourceforge.net/perfmon2/%{name}-%{version}.tar.gz
@@ -21,6 +21,7 @@ Patch0:		%{name}-build.patch
 URL:		https://perfmon2.sourceforge.net/
 %{?with_python2:BuildRequires:	python-devel >= 2}
 %{?with_python3:BuildRequires:	python3-devel >= 1:3.2}
+%{?with_python3:BuildRequires:	python3-setuptools}
 %{?with_python:BuildRequires:	swig-python >= 2}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
