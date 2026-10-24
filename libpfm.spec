@@ -12,7 +12,7 @@ Summary:	Library to encode performance events for use by perf tool
 Summary(pl.UTF-8):	Biblioteka do kodowania zdarzeń związanych z wydajnością do użycia przez narzędzie perf
 Name:		libpfm
 Version:	4.14.1
-Release:	1
+Release:	2
 License:	MIT
 Group:		Libraries
 Source0:	https://downloads.sourceforge.net/perfmon2/%{name}-%{version}.tar.gz
@@ -40,7 +40,7 @@ Linuksa od wersji 2.6.31.
 Summary:	Header files for libpfm 4 library
 Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki libpfm 4
 Group:		Development/Libraries
-Requires:	%{name} = %{version}-%{release}
+Requires:	%{name}%{?_isa} = %{version}-%{release}
 
 %description devel
 Header files for libpfm 4 library.
@@ -52,7 +52,7 @@ Pliki nagłówkowe biblioteki libpfm 4.
 Summary:	Static libpfm 4 library
 Summary(pl.UTF-8):	Statyczna biblioteka libpfm 4
 Group:		Development/Libraries
-Requires:	%{name}-devel = %{version}-%{release}
+Requires:	%{name}-devel%{?_isa} = %{version}-%{release}
 
 %description static
 Static libpfm 4 library.
@@ -64,7 +64,7 @@ Statyczna biblioteka libpfm 4.
 Summary:	Python 2 bindings for libpfm and perf_event_open system call
 Summary(pl.UTF-8):	Wiązania Pythona 2 do libpfm i wywołania systemowego perf_event_open
 Group:		Libraries/Python
-Requires:	%{name} = %{version}-%{release}
+Requires:	%{name}%{?_isa} = %{version}-%{release}
 
 %description -n python-perfmon
 Python 2 bindings for libpfm and perf_event_open system call.
@@ -76,7 +76,7 @@ Wiązania Pythona 2 do libpfm i wywołania systemowego perf_event_open.
 Summary:	Python 3 bindings for libpfm and perf_event_open system call
 Summary(pl.UTF-8):	Wiązania Pythona 3 do libpfm i wywołania systemowego perf_event_open
 Group:		Libraries/Python
-Requires:	%{name} = %{version}-%{release}
+Requires:	%{name}%{?_isa} = %{version}-%{release}
 
 %description -n python3-perfmon
 Python 3 bindings for libpfm and perf_event_open system call.
